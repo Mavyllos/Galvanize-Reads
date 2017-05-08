@@ -21,8 +21,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'images', 'skilluplogo.ico')));
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -42,7 +41,8 @@ hbsUtils.registerPartials(path.join(__dirname, 'views'), {
 })
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/authors', authors);
+app.use('/books', books);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

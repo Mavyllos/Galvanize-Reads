@@ -4,7 +4,19 @@ var db = require('../db/connection.js')
 
 /* GET books listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  db("books")
+  .select(["id", "title", "genre", "description", "cover_url"])
+  .then(db("authors")
+    .select(["id"]))
+  .then(books => {
+     res.render('books/index',
+     { books })
+  })
+  .catch(err => {
+    next(err)
+  })
 });
+
+
 
 module.exports = router;

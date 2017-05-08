@@ -1,7 +1,7 @@
 exports.seed = (knex) => {
   return knex('authors-books').del()
     .then(() => {
-      return knex('books').insert([
+      return knex('authors-books').insert([
       {
         books_id: 1,
         authors_id: 1
@@ -33,7 +33,7 @@ exports.seed = (knex) => {
       {
         books_id: 6,
         authors_id: 4
-      })
+      },
     ]);
   });
 };

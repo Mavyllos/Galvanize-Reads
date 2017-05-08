@@ -1,0 +1,60 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <br>
+        <h1>Skill Up!</h1>
+        <p><hr></p>
+        <br>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <a href="/books">
+            <img src="http://placehold.it/500x100/42f498?text=Books" alt="Books">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="/authors">
+            <img src="http://placehold.it/500x100/40ede7?text=Authors" alt="Authors">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label for="filter">Filter Books</label>
+          <select class="filter" name="filter">
+              <option value="choose">Filter By:</option>
+              <option value="all">All Books</option>
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+          </select>
+        </div>
+        <div class="col-md-10">
+          {{#each books}}
+          <br>
+            <div class="book" value="{{this.genre}}">
+              <div class="row">
+              <div class="col-md-3">
+                <img src="{{this.cover_url}}" width="225" height="315" class="book_img" />
+              </div>
+              <div class="col-md-8">
+                <div><h3><a href="/books/{{this.id}}">{{this.title}}</a></h3></div>
+                <div class="genre"><h4>{{this.genre}}</h4></div>
+                <div class="description">{{this.description}}</div>
+                <br>
+                <div class="authors">
+                  <p><b>Authors:</b></p>
+                  <ol>
+                  {{#each this.author_id}}
+                  <li>{{this.first_name}} {{this.last_name}}</li>
+                  {{/each}}
+                  </ol>
+                </div>
+                </div>
+              </div>
+            </div>
+            <br>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+</div>
