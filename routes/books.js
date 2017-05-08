@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../db/connection.js')
 
-/* GET users listing. */
+/* GET books listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
