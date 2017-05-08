@@ -15,4 +15,18 @@ router.get('/', function(req, res, next) {
   })
 });
 
+router.get("/:id", (req, res, next) => {
+  let id = req.params.id;
+  db("authors")
+  .select(["id", "first_name", "last_name", "biography", "portrait_url"])
+  .where("id", id)
+  .first()
+  .then(author => {
+     res.render('authors/show',
+     { author })
+  })
+    .catch((error) => {
+      next(error);
+    });
+});
 module.exports = router;

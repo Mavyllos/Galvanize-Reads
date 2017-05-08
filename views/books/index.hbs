@@ -20,7 +20,7 @@
       </div>
       <div class="row">
         <div class="col-md-2">
-          <label for="filter">Filter Books</label>
+          <label for="filter"><h3>Filter Books<h3></label>
           <select class="filter" name="filter">
               <option value="choose">Filter By:</option>
               <option value="all">All Books</option>
@@ -34,7 +34,9 @@
             <div class="book" value="{{this.genre}}">
               <div class="row">
               <div class="col-md-3">
+                <a href="/books/{{this.id}}">
                 <img src="{{this.cover_url}}" width="225" height="315" class="book_img" />
+              </a>
               </div>
               <div class="col-md-8">
                 <div><h3><a href="/books/{{this.id}}">{{this.title}}</a></h3></div>
@@ -44,9 +46,9 @@
                 <div class="authors">
                   <p><b>Authors:</b></p>
                   <ol>
-                  {{#each this.author_id}}
-                  <li>{{this.first_name}} {{this.last_name}}</li>
-                  {{/each}}
+                    {{#each book.authors}}
+                      <li><a href="/authors/{{this.id}}">{{this.first_name}} {{this.last_name}}</a></li>
+                    {{/each}}
                   </ol>
                 </div>
                 </div>

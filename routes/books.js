@@ -17,6 +17,19 @@ router.get('/', function(req, res, next) {
   })
 });
 
-
+router.get("/:id", (req, res, next) => {
+  let id = req.params.id;
+  db("books")
+  .select(["id", "title", "genre", "description", "cover_url"])
+  .where("id", id)
+  .first()
+  .then(book => {
+     res.render('books/show',
+     { book })
+  })
+    .catch((error) => {
+      next(error);
+    });
+});
 
 module.exports = router;

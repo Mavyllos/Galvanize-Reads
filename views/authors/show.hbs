@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <h1>Skill Up!</h1>
+      <p><hr></p>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <a href="/books">
+          <img src="http://placehold.it/500x100/42f498?text=Books" alt="Books">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="/authors">
+          <img src="http://placehold.it/500x100/40ede7?text=Authors" alt="Authors">
+        </a>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-3">
+      <br>
+      <img class="author_img" data-caption="{{author.last_name}}" src="{{author.portrait_url}}" height="300" width="250">
+    </div>
+    <br><br>
+    <div class="col-md-6">
+      <div><h3>{{author.first_name}} {{author.last_name}}</h3></div>
+      <div>{{author.biography}}</div>
+      <br>
+      <div>
+        <p><b>Bibliography: </b></p>
+        <ol>
+        {{#each author.title}}
+          <li><a href="/books/{{this.id}}">{{this.title}}</a></li>
+        {{/each}}
+      </ol>
+    </div>
+    </div>
+  </div>
+</div>
