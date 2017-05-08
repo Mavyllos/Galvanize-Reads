@@ -1,8 +1,8 @@
 exports.up = function(knex) {
   return knex.schema.createTable('authors-books', (table) => {
     table.increments();
-    table.integer('authors_id').references('authors.id');
-    table.integer('books_id').references('books.id');
+    table.integer('authors_id').notNullable();
+    table.integer('books_id').notNullable();
   });
 };
 

@@ -39,7 +39,12 @@
           <li><a href="/books/{{this.id}}">{{this.title}}</a></li>
         {{/each}}
       </ol>
-    </div>
+      <br><br>
+      <a href="/author/edit/{{author.id}}" class="btn btn-sm btn-primary">Edit</a>
+      <br><br>
+      <form action="/authors/{{ author.id }}?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+      </form>
     </div>
   </div>
   </div>

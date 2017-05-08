@@ -32,4 +32,19 @@ router.get("/:id", (req, res, next) => {
     });
 });
 
+router.delete("/:id", (req, res, next) => {
+  let id = req.params.id;
+  db("books")
+  .returning(["id", "title", "genre", "description", "cover_url"])
+  .where("id", id)
+  .del()
+    .then((books) => {
+      res.redirect('/books')
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+
 module.exports = router;

@@ -46,7 +46,16 @@
                 {{/each}}
                 </ol>
               </div>
-              </div>
+            </div>
+              <div class="col-md-2">
+                <br><br>
+                <a href="/author/edit/{{this.id}}" class="btn btn-sm btn-primary">Edit {{author.first_name}} {{author.last_name}}</a>
+                <br><br>
+                <form action="/authors/{{ this.id }}?_method=DELETE" method="POST">
+                  <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+                <br>
+                <br>
             </div>
           </div>
           <br>
