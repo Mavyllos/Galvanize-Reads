@@ -3,15 +3,15 @@
     <div class="container well">
         <div class="row">
             <div class="col-md-12">
-                <form method="POST" action="/authors/{{ author.id }}" class="form-horizontal">
+                <form method="POST" action="/authors/{{ author.id }}?_method=PUT" class="form-horizontal">
                     <fieldset class "userProfile">
-                        <legend>Add New Author</legend>
+                        <legend>Update {{author.first_name}} {{author.last_name}}</legend>
 
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="first_name_label">First Name</label>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input id="first_name" name="first_name" type="text" placeholder="First Name" class="form-control input-md">
+                                    <input id="first_name" name="first_name" type="text" placeholder="First Name" class="form-control input-md" value="{{author.first_name}}">
                                 </div>
                             </div>
                         </div>
@@ -20,7 +20,7 @@
                             <label class="col-md-2 control-label" for="last_name_label">Last Name</label>
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input id="last_name" name="last_name" type="text" placeholder="Last Name" class="form-control input-md">
+                                    <input id="last_name" name="last_name" type="text" placeholder="Last Name" class="form-control input-md" value="{{author.last_name}}">
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                             <label class="col-md-2 control-label" for="biography_label">Biography</label>
                             <div class="col-md-8">
                                 <div class="input-group col-md-12">
-                                    <input id="biography" name="biography" type="text" placeholder="Biography" class="form-control input-md">
+                                    <input id="biography" name="biography" type="text" placeholder="Biography" class="form-control input-md" value="{{author.biography}}">
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                             <label class="col-md-2 control-label" for="url-label">URL Address</label>
                             <div class="col-md-8">
                                 <div class="input-group col-md-12">
-                                    <input id="portrait_url" name="portrait_url" type="text" placeholder="Portrait URL" class="form-control input-md"
+                                    <input id="portrait_url" name="portrait_url" type="text" placeholder="Portrait URL" class="form-control input-md" value="{{author.portrait_url}}"
                                 </div>
                             </div>
                         </div>

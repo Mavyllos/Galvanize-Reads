@@ -1,11 +1,11 @@
-exports.up = function(knex) {
-  return knex.schema.createTable('authors-books', (table) => {
+exports.up = function(knex, Promise) {
+  return knex.schema.createTable('authors_books', (table) => {
     table.increments();
-    table.integer('authors_id').notNullable();
-    table.integer('books_id').notNullable();
+    table.integer('author_id').notNullable();
+    table.integer('book_id').notNullable();
   });
 };
 
-exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('authors-books');
+exports.down = function(knex, Promise) {
+  return knex.schema.dropTableIfExists('authors_books');
 };

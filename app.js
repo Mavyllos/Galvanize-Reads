@@ -1,21 +1,21 @@
 'use strict';
 
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var rp = require('request-promise');
-var index = require('./routes/index');
-var authors = require('./routes/authors');
-var books = require('./routes/books');
+let express = require('express');
+let path = require('path');
+let favicon = require('serve-favicon');
+let logger = require('morgan');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
+let methodOverride = require('method-override');
+let rp = require('request-promise');
+let index = require('./routes/index');
+let authors = require('./routes/authors');
+let books = require('./routes/books');
 
-var hbs = require('hbs');
-var hbsUtils = require('hbs-utils')(hbs);
+let hbs = require('hbs');
+let hbsUtils = require('hbs-utils')(hbs);
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,14 +31,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 hbsUtils.registerPartials(path.join(__dirname, 'views'), {
  match: /\/?.*_.*\.(html|hbs)$/,
  name: (name) => {
-   var pathArr = name.split('/')
-   var last = pathArr.length - 1
-   pathArr[last] = pathArr[last].slice(1)
-   var newName = pathArr.join('/')
+   let pathArr = name.split('/');
+   let last = pathArr.length - 1;
+   pathArr[last] = pathArr[last].slice(1);
+   let newName = pathArr.join('/');
 
-   return newName
+   return newName;
  }
-})
+});
 
 app.use('/', index);
 app.use('/authors', authors);
@@ -46,7 +46,7 @@ app.use('/books', books);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });

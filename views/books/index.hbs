@@ -46,15 +46,13 @@
                 <div class="authors">
                   <p><b>Authors:</b></p>
                   <ol>
-                    {{#each book.authors}}
-                      <li><a href="/authors/{{this.id}}">{{this.first_name}} {{this.last_name}}</a></li>
-                    {{/each}}
+                      <li><a href="/authors/{{this.author_id}}">{{this.first_name}} {{this.last_name}}</a></li>
                   </ol>
                 </div>
               </div>
               <div class="col-md-2">
                 <br><br>
-                <a href="/books/edit/{{book.id}}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="/books/{{this.id}}/edit" class="btn btn-sm btn-primary">Edit</a>
                 <br><br>
                 <form action="/books/{{ this.id }}?_method=DELETE" method="POST">
                   <button type="submit" class="btn btn-sm btn-danger" name="delete"

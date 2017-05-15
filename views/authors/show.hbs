@@ -40,7 +40,7 @@
         {{/each}}
       </ol>
       <br><br>
-      <a href="/author/edit/{{author.id}}" class="btn btn-sm btn-primary">Edit</a>
+      <a href="/authors/{{author.id}}/edit" class="btn btn-sm btn-primary">Edit</a>
       <br><br>
       <form action="/authors/{{ author.id }}?_method=DELETE" method="POST">
         <button type="submit" class="btn btn-sm btn-danger">Delete</button>

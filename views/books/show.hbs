@@ -41,7 +41,7 @@
         {{/each}}
       </ol>
       <br><br>
-      <a href="/books/edit/{{book.id}}" class="btn btn-sm btn-primary">Edit</a>
+      <a href="/books/{{book.id}}/edit" class="btn btn-sm btn-primary">Edit</a>
       <br><br>
       <form action="/books/{{ book.id }}?_method=DELETE" method="POST">
         <button type="submit" class="btn btn-sm btn-danger" name="delete"
